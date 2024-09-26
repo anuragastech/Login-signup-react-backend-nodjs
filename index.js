@@ -1,12 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors");
 
 const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
 
 // MongoDB Connection
 mongoose.connect("mongodb://localhost:27017/Baloon", {
