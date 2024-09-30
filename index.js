@@ -1,10 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require('cors');
 
-const app = express();
+const app = express(); 
 
 // Middleware
+app.use(cors());
 app.use(express.json());
+
 
 // MongoDB Connection
 mongoose.connect("mongodb://localhost:27017/Baloon", {
@@ -59,7 +62,7 @@ app.post("/login", async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: "Error logging in", error });
     }
-    
+
 });
 
 // Start the server
